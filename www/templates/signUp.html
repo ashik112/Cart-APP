@@ -1,0 +1,26 @@
+<ion-view title="Sign Up" id="page6">
+  <ion-content padding="true" class="has-header">
+    <form id="signUp-form2" class="list">
+      <label class="item item-input" id="signUp-input1">
+        <span class="input-label">Phone (+880)</span>
+        <input ng-model="input.phone" value="" type="number" placeholder="">
+      </label>
+      <label class="item item-input" id="signUp-input2">
+        <span class="input-label">Name</span>
+        <input ng-model="input.name" type="text" placeholder="">
+      </label>
+      <label class="item item-select" id="signUp-select1">
+        <span class="input-label">Area</span>
+        <select ng-options="item for item in areas" ng-model="input.area">
+         
+        </select>
+      </label>
+      <label class="item item-input" id="signUp-input3">
+        <span class="input-label">Email</span>
+        <input ng-model="input.email" type="email" placeholder="Optional">
+      </label>
+	  <a  id="signUp-button1" class="button button-positive  button-block" ng-click="signUp(input)">Submit</a>
+    </form>
+    <!--ui-sref="menu.order"-->
+  </ion-content>
+</ion-view>

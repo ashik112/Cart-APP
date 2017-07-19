@@ -1,0 +1,37 @@
+<ion-view title="Cart" id="page4" style="">
+
+  <ion-content padding="false" class="has-header" scroll="true" style="top:0;">
+  <br><br>
+	<ion-list>
+	<div class="row header  text-center" >
+		<div class="col stable"><h4 class="stable">Item</h4></div>
+		<div class="col stable"><h4 class="stable">Quantity</h4></div>
+		<div class="col stable"><h4 class="stable">Cost</h4></div>
+		<div class="col stable"></div>
+	</div>
+	
+	<div class="row  text-center" ng-repeat="item in items"><!--ng-repeat="data in ctrl.data"-->
+		<div class="col"><h4>{{item.name}}</h4></div>
+		<div class="col">
+		<label class="item item-input ">
+			<div class="input-label">
+			</div>
+			<select  ng-init="item.quantity"  ng-options="item for item in options" ng-change="updateCart()" ng-model="item.quantity" style=" border:0px; outline:0px;">
+			</select>
+		</label>
+		</div>
+		<div class="col"><h4>{{item.cost}}</h4></div>
+		<div class="col" >
+			<button ng-click="removeItem($index)" class="button button-positive">Remove</button>
+		</div>
+	</div>
+		<div class="row  text-center" ><!--ng-repeat="data in ctrl.data"-->
+		<div class="col"><h4></h4></div>
+		<div class="col"><h5>Total</h5></div>
+		<div class="col" ng-model="total"><h5>{{total | currency : ""}}/-</h5></div>
+		<div class="col"></div>
+	</div>
+	</ion-list>
+	<button class="button button-block button-positive" ng-click="confirmOrder()" >Confirm Order</button></div>
+ </ion-content>
+</ion-view>

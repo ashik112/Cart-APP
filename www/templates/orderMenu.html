@@ -1,0 +1,53 @@
+<ion-view title="{{title}}" id="pageOrderMenu" style="">
+  <ion-content padding="false" class="has-header" scroll="true" style="top:0;">
+  <br><br>
+	<ion-list>
+	<div class="row header  text-center" >
+	  <div class="col stable"><h4 class="stable">Item</h4></div>
+	  <div class="col stable"><h4 class="stable">Price</h4></div>
+	  <div class="col stable"><h4 class="stable">Quantity</h4></div>
+	 
+	 <!-- <div class="col stable"></div>-->
+	</div>
+	
+	<div class="row  text-center" ng-repeat="item in selectedItems"><!--ng-repeat="data in ctrl.data"-->
+		<div class="col"> <img style="border-radius: 0%;width: 30px; height: 30px; float: left;" src="http://ionicframework.com/img/ionic-logo-blog.png" ng-click="showImage(3)"><h4>{{item.name}}</h4></div>
+		<div class="col"><h4>{{item.price}}</h4></div>
+		<div class="col">
+			<label class="item item-input ">
+				<div class="input-label">
+				</div>
+				<select  ng-options="item for item in options" ng-change="updateTotal()" ng-model="item.quantity" style=" border:0px; outline:0px;">
+				<!--	<option selected>0</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option><option>7</option><option>8</option>
+					<option>9</option><option>10</option>-->
+				</select>
+			</label>
+		</div>
+	</div>
+	
+	<!--  <div class="col" >
+	  <button class="button button-positive" >Add</button></div>-->
+	
+	<div class="row  text-center" ><!--ng-repeat="data in ctrl.data"-->
+	  <div class="col"><h4></h4></div>
+	  <div class="col"><h4>Total</h4></div>
+	  <div ng-model="total" class="col"><h4>{{total | currency : ""}}/-</h4></div>
+	</div>
+	</ion-list>
+	<button ng-click="addToCart()" class="button button-block button-positive ">Add to Cart</button>
+	<button  ui-sref="menu.cart" class="button button-block button-positive" ng-click="goToCart()">Go To Cart</button><!--menu-close-->
+	 <script id="image-modal.html" type="text/ng-template">
+	 <div class="modal image-modal transparent" ng-click="closeModal()">
+		<ion-pane class="transparent">
+		<img ng-src="{{imageSrc}}" class="fullscreen-image"/>
+		</ion-pane>
+	</div>
+	</script>
+ </ion-content>
+</ion-view>

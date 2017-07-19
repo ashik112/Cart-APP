@@ -1,0 +1,25 @@
+<ion-view title="Report" id="page2">
+  <ion-content padding="true" class="has-header" style="top:0;">
+  <br><br>
+  <label id="report-select4" class="item item-select ">
+             <span class="input-label">Start Date</span>
+				<input ng-model="input.bDate" placeholder="Time" type="date">
+            </label>
+			  <label id="report-select3" class="item item-select ">
+                 <span class="input-label">Start Time</span>
+				  <input ng-model="input.bTime" placeholder="Enter Time" type="time">
+            </label>
+			 <label id="report-select6" class="item item-select ">
+               <span class="input-label">End Date</span>
+               <input ng-model="input.eDate" placeholder="Enter Date & Time" type="date">
+            </label>
+			<label id="report-select5" class="item item-select ">
+               <span class="input-label">End Time</span>
+               <input ng-model="input.eTime" placeholder="Enter Date & Time" type="time">
+            </label>
+			 <div style="width: 283px; height: 28px;" class="spacer"></div>
+            <div style="margin-right:-20px;">
+               <a class=" button button-positive button-large button-full " style="left:-10px;border-radius:0px 0px 0px 0px;" id="report-button8"  ng-click="submitData(input)">Submit</a><!--ui-sref="menu.reportShow"-->
+            </div>
+  </ion-content>
+</ion-view>
